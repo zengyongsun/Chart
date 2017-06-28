@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 25
@@ -17,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+    }
 }
 
 dependencies {
@@ -25,9 +29,24 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('libs/MPAndroidChart-v2.2.5.jar')
+    // if you use the support libraries
+    //测试用的
+    compile files('libs/Msc.jar')
+    compile files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.linheimx.library:lchart:1.1.4'
-    testCompile 'junit:junit:4.12'
     compile 'com.orhanobut:logger:1.15'
+    compile 'com.google.dagger:dagger-android:2.11-rc2'
+    compile 'com.google.dagger:dagger-android-support:2.11-rc2'
+    compile 'com.yalantis:ucrop:2.2.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+
+    compile 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:2.4.0"
+
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.zy.chart">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -9,9 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/CustomNoTitle">
         <activity android:name=".chart.MainChartActivity">
-
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -20,9 +23,28 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".SimpleDrawActivity"/>
-        <activity android:name=".ShapeSelectActivity"/>
+        <activity android:name=".SimpleDrawActivity">
+        </activity>
+        <activity android:name=".ShapeSelectActivity">
+        </activity>
+        <activity android:name=".voice.XunFeiActivity">
+        </activity>
+        <activity android:name=".selectHead.SelectHeadActivity">
+        </activity>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".viewpage.ViewPageActivity">
+        </activity>
+        <activity
+            android:name=".x5.WebViewX5Activity"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity android:name=".StartActivityActivity">
+        </activity>
+        <activity android:name=".permission.PermissionActivity">
+        </activity>
     </application>
 
 </manifest>
