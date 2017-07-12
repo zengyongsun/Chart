@@ -1,0 +1,31 @@
+project.ext {
+
+    android = [
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.3",
+            applicationId    : "com.zy.chart",
+            minSdkVersion    : 15,
+            targetSdkVersion : 25,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+
+    dependencies = [
+            "butterknife"                    : "com.jakewharton:butterknife:8.6.0",
+            "butterknife-compiler"           : "com.jakewharton:butterknife-compiler:8.6.0",
+            "appcompat-v7"                   : "com.android.support:appcompat-v7:25.3.1",
+            "constraint-layout"              : "com.android.support.constraint:constraint-layout:1.0.2",
+            "lchart"                         : "com.linheimx.library:lchart:1.1.4",
+            "logger"                         : "com.orhanobut:logger:1.15",
+            "dagger-android"                 : "com.google.dagger:dagger-android:2.11-rc2",
+            "dagger-android-support"         : "com.google.dagger:dagger-android-support:2.11-rc2",
+            "ucrop"                          : "com.yalantis:ucrop:2.2.0",
+            "BaseRecyclerViewAdapterHelper"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18",
+            "recyclerview-v7"                : "com.android.support:recyclerview-v7:25.3.1",
+            "permissionsdispatcher"          : "com.github.hotchemi:permissionsdispatcher:2.4.0",
+            "permissionsdispatcher-processor": "com.github.hotchemi:permissionsdispatcher-processor:2.4.0"
+    ]
+
+
+}
