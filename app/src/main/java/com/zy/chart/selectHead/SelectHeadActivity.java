@@ -8,10 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.zy.chart.R;
-import com.zy.chart.ReminderTargetBean;
-import com.zy.chart.TargetTypeBean;
-
-import java.util.ArrayList;
 
 public class SelectHeadActivity extends AppCompatActivity implements PicCrop.CropHandler {
 
@@ -23,27 +19,7 @@ public class SelectHeadActivity extends AppCompatActivity implements PicCrop.Cro
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_head);
         mContext = this;
-        initData();
         initView();
-    }
-
-    public ArrayList<TargetTypeBean> departTypeList;
-    public ArrayList<TargetTypeBean> personTypeList;
-
-    private void initData() {
-        personTypeList = getIntent().getParcelableArrayListExtra("personType");
-        departTypeList = getIntent().getParcelableArrayListExtra("departType");
-        ReminderTargetBean bean = (ReminderTargetBean) getIntent().getSerializableExtra("bean");
-
-        if (departTypeList != null && departTypeList.size() > 0) {//有部门目标
-            departTypeList.get(0).setSelected(true);
-            personTypeList.get(0).setSelected(true);
-        } else if (departTypeList != null && departTypeList.size() > 0) {//没有部门目标
-            personTypeList.get(0).setSelected(true);
-        } else {
-            personTypeList = bean.getPersonalTargetTypeList();
-        }
-
     }
 
     private void initView() {

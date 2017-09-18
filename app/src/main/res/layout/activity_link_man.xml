@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zy.chart.linkman.LinkManActivity">
+
+
+    <Button
+        android:id="@+id/contractList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取联系人列表"/>
+
+
+    <Button
+        android:id="@+id/contractListPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取联系人列表带号码"/>
+
+    <Button
+        android:id="@+id/contractListEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取联系人列表带邮箱"/>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/searchContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索联系人"/>
+
+    <com.zy.chart.linkman.MyEditText
+        android:id="@+id/myEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:id="@+id/contactList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</LinearLayout>

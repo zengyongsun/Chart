@@ -13,4 +13,19 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+
+    <declare-styleable name="CircleView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+    <style name="CustomNoTitle.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomNoTitle.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="CustomNoTitle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
 </resources>

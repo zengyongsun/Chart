@@ -1,8 +1,9 @@
 package com.zy.chart.loginEffect;
 
+import android.graphics.Color;
 import android.support.annotation.LayoutRes;
-import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -21,17 +22,20 @@ public class LoginEffectAdapter extends BaseQuickAdapter<LoginBean, BaseViewHold
 
     @Override
     protected void convert(BaseViewHolder helper, LoginBean item) {
-        helper.setText(R.id.tv_item_name, item.getName());
+        TextView textView = helper.getView(R.id.tv_item_name);
+        textView.setText(item.getName());
 //        helper.setImageResource(R.id.iv_item_image,item.getImg());
         Logger.d("getLayoutPosition" + helper.getLayoutPosition());
         ImageView imageView = helper.getView(R.id.iv_item_image);
         if (item.isSelect()) {
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(60,60));
+            // the special one.Scale Large
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            textView.setTextColor(Color.parseColor("#ff0000"));
         } else {
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+            // the rest.Scale small
+            imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            textView.setTextColor(Color.parseColor("#757575"));
         }
-
     }
-
 
 }

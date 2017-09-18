@@ -114,10 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.more_window_online:
                         Intent intent = new Intent(MainActivity.this, SelectHeadActivity.class);
-                        ReminderTargetBean bean = new ReminderTargetBean();
-                        intent.putExtra("bean", bean);
                         startActivity(intent);
-
                         break;
                     case R.id.more_window_delete:
                         break;
@@ -134,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override

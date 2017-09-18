@@ -11,9 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.zy.chart.broadcast.BroadCastActivity;
 import com.zy.chart.chart.MainChartActivity;
+import com.zy.chart.coustomview.CustomViewActivity;
+import com.zy.chart.linkman.LinkManActivity;
 import com.zy.chart.loginEffect.LoginEffectActivity;
+import com.zy.chart.popwindow.PopupWindowActivity;
+import com.zy.chart.reuseview.activity.ReuseViewActivity;
+import com.zy.chart.rxjava.RxJavaActivity;
+import com.zy.chart.selectHead.SelectHeadActivity;
 import com.zy.chart.selectfile.SelectFileActivity;
+import com.zy.chart.tablayout.TabLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +68,15 @@ public class StartActivityActivity extends AppCompatActivity {
         data.add(new StartBean("图标的展示，以及设置方式", MainChartActivity.class));
         data.add(new StartBean("文本打开方式尝试", SelectFileActivity.class));
         data.add(new StartBean("一种奇葩的登录方式", LoginEffectActivity.class));
+        data.add(new StartBean("选择头像及裁剪", SelectHeadActivity.class));
+        data.add(new StartBean("自定义view的尝试", CustomViewActivity.class));
+        data.add(new StartBean("组合自定义view", ReuseViewActivity.class));
+        data.add(new StartBean("弹出窗口", PopupWindowActivity.class));
+        data.add(new StartBean("RxJava试用", RxJavaActivity.class));
+        data.add(new StartBean("侧滑菜单", MenuActivity.class));
+        data.add(new StartBean("联系人相关", LinkManActivity.class));
+        data.add(new StartBean("广播发送", BroadCastActivity.class));
+        data.add(new StartBean("tabLayout +　ViewPager", TabLayoutActivity.class));
 
         mStartAdapter.setNewData(data);
     }

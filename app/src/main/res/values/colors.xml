@@ -4,7 +4,15 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-
-
     <color name="text_description_color">#373737</color>
+
+
+
+
+
+
+
+    <color name="row_view_background_pressed">#ff0000</color>
+    <color name="row_view_background_normal">#ffffff</color>
+
 </resources>
