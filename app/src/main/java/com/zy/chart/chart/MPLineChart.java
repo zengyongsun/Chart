@@ -27,8 +27,8 @@ public class MPLineChart {
   public static void setLineChartStyle(LineChart lineChart) {
 
     lineChart.setDrawBorders(false);//是否在折线图上添加边框
-    lineChart.setDescription(""); // 数据描述
-    lineChart.setNoDataTextDescription("暂无数据");// 如果没有数据的时候，会显示这个
+//    lineChart.setDescription(""); // 数据描述
+    lineChart.setNoDataText("暂无数据");// 如果没有数据的时候，会显示这个
     lineChart.setAlpha(0.8f); //设置透明度
     lineChart.setDrawGridBackground(false);// 是否显示表格颜色
     lineChart.setTouchEnabled(true);  // 设置是否可以触摸
@@ -99,7 +99,7 @@ public class MPLineChart {
     lineDataSet.setHighLightColor(Color.BLUE); // 高亮的线的颜色
     ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
     lineDataSets.add(lineDataSet);
-    LineData lineData = new LineData(xValues, lineDataSets);
+    LineData lineData = new LineData( lineDataSets);
     lineData.setDrawValues(true);
     lineData.setValueTextColor(Color.parseColor("#373737"));
     lineData.setValueTextSize(12);
@@ -137,7 +137,7 @@ public class MPLineChart {
     dataSets.add(lineSet1);
     dataSets.add(lineSet2);
 
-    LineData lineData = new LineData(xValues, dataSets);
+    LineData lineData = new LineData(dataSets);
     lineData.setValueTextColor(Color.WHITE);
     lineData.setValueTextSize(9f);
 
@@ -188,7 +188,7 @@ public class MPLineChart {
     dataSets.add(lineSet2);
     dataSets.add(lineSet3);
 
-    LineData lineData = new LineData(xValues, dataSets);
+    LineData lineData = new LineData( dataSets);
     lineData.setValueTextColor(Color.WHITE);
     lineData.setValueTextSize(9f);
 

@@ -24,8 +24,6 @@
         android:theme="@style/CustomNoTitle">
         <activity android:name=".chart.MainChartActivity">
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
         <activity android:name=".SimpleDrawActivity">
         </activity>
         <activity android:name=".ShapeSelectActivity">

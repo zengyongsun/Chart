@@ -8,6 +8,7 @@ import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
@@ -24,7 +25,7 @@ public class MPPieChart {
 
   public static void setPieChartStyle(PieChart pieChart) {
     pieChart.setUsePercentValues(true);//计算转化百分比的值
-    pieChart.setDescription("");//图标下方的描述Label
+//    pieChart.setDescription("");//图标下方的描述Label
     pieChart.setExtraOffsets(20, 10, 10, 5);//边距（left,top,right,bottom）
 
     pieChart.setDragDecelerationFrictionCoef(0.95f);//减速摩擦系数[ 0；1 ]区间，较高值指示速度会缓慢下降
@@ -60,7 +61,7 @@ public class MPPieChart {
     pieChart.invalidate();
   }
 
-  public static PieData getPieDate(List<String> xValues, List<Entry> entryList) {
+  public static PieData getPieDate( List<PieEntry> entryList) {
 
     //饼状图的颜色
     int[] setColor = {ColorTemplate.rgb("#F75046"), ColorTemplate.rgb("#F7726A")};
@@ -78,7 +79,7 @@ public class MPPieChart {
     dataSet.setDrawValues(true);
 //    dataSet.setValueLineColor(Color.TRANSPARENT);//线设置呈透明的，即不显示
 
-    PieData data = new PieData(xValues, dataSet);
+    PieData data = new PieData(dataSet);
     data.setValueFormatter(new PercentFormatter());
     data.setValueTextSize(13f);
     data.setValueTextColor(Color.parseColor("#373737"));
