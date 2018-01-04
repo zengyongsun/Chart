@@ -89,6 +89,8 @@
         </activity>
         <activity android:name=".tablayout.TabLayoutActivity">
         </activity>
+        <activity android:name=".searchview.SearchViewActivity">
+        </activity>
     </application>
 
 </manifest>

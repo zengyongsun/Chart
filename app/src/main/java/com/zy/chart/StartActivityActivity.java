@@ -19,6 +19,7 @@ import com.zy.chart.loginEffect.LoginEffectActivity;
 import com.zy.chart.popwindow.PopupWindowActivity;
 import com.zy.chart.reuseview.activity.ReuseViewActivity;
 import com.zy.chart.rxjava.RxJavaActivity;
+import com.zy.chart.searchview.SearchViewActivity;
 import com.zy.chart.selectHead.SelectHeadActivity;
 import com.zy.chart.selectfile.SelectFileActivity;
 import com.zy.chart.tablayout.TabLayoutActivity;
@@ -77,6 +78,7 @@ public class StartActivityActivity extends AppCompatActivity {
         data.add(new StartBean("联系人相关", LinkManActivity.class));
         data.add(new StartBean("广播发送", BroadCastActivity.class));
         data.add(new StartBean("tabLayout +　ViewPager", TabLayoutActivity.class));
+        data.add(new StartBean("搜索效果", SearchViewActivity.class));
 
         mStartAdapter.setNewData(data);
     }
