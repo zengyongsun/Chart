@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.zy.chart">
+    package="com.zy.chart">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 蓝牙需要的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- 网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 外部存储读权限，调试工具加载本地补丁需要 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".App"
@@ -22,75 +29,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CustomNoTitle">
-        <activity android:name=".chart.MainChartActivity">
-        </activity>
-        <activity android:name=".SimpleDrawActivity">
-        </activity>
-        <activity android:name=".ShapeSelectActivity">
-        </activity>
-        <activity android:name=".voice.XunFeiActivity">
-        </activity>
-        <activity android:name=".selectHead.SelectHeadActivity">
-        </activity>
+        <activity android:name=".chart.MainChartActivity"></activity>
+        <activity android:name=".SimpleDrawActivity"></activity>
+        <activity android:name=".ShapeSelectActivity"></activity>
+        <activity android:name=".voice.XunFeiActivity"></activity>
+        <activity android:name=".selectHead.SelectHeadActivity"></activity>
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".viewpage.ViewPageActivity">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".viewpage.ViewPageActivity"></activity>
         <activity
             android:name=".x5.WebViewX5Activity"
-            android:windowSoftInputMode="stateHidden|adjustResize">
-        </activity>
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity android:name=".StartActivityActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".permission.PermissionActivity">
-        </activity>
-        <activity android:name=".selectfile.SelectFileActivity">
-        </activity>
-        <activity android:name=".x5.ViewFileActivity">
-        </activity>
+        <activity android:name=".permission.PermissionActivity"></activity>
+        <activity android:name=".selectfile.SelectFileActivity"></activity>
+        <activity android:name=".x5.ViewFileActivity"></activity>
 
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
-            android:value="24539858-1"/>
+            android:value="24539858-1" />
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
-            android:value="321f784a5b68467500bf636d59b15524"/>
+            android:value="321f784a5b68467500bf636d59b15524" />
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4NTPvImFpYzyTYiiqe5podrHNV8PtBCcPBeoX1U0gHnEEAn+465LGl5PjsdheRH0Yx3CPHo7Lm7X6+Q/FJSqGsbRAmHlJ1LIt1dqQ             s3ourJ2a+Xx6wgTIRuObwUZyPP7/5NZ2nD6M+/aEqjF8qeehM80qWTzd             I7dYNeK5TzIWhIHIsePd6HW7oEAq8rTu73aefXddo9qH5MBYUHEt6DsV             S+GNApzgB2EuhI+II/jET83qszkIE8uWaLhEomfh+hPFQ0Kvw1UnyS2g             5Dq40NFlZKne3FUIrrbvSNb2FS+VXKiLBPrTQZPslGHX8WDOeG8JFm/Q             TYSNYnXM/hLEpujXAgMBAAECggEBAI4oALw7PBGok8bpqZhnavHTJ8Pg             R0NSQRJG7jEWWz6+P1lo1EhRBCReNbMyPFgDYscMosDQREK9F+Nm8dSi             qf7ohMKU6IUhr5/PuayR1WjPrZE7l+TkdexZSK2aqlLe36t7XkaKrXr/t             28KKMacGDU/VMWpuF6wgX2BmEaJ542XwnVN/SR3hjzXiy3vwfQiz83aYE             FYtMeDwMR0paNpvzCGoqdt7i7L+3bRmZpeY9oI6Wyht7s7cDMTEYzggwE             dNcaMf4uRdhjEKwCU4q+0LT37zbJDsZI0H/F1QZqOsnD//3P54yeT3Mcl             3tpnTr53aNkH2u0jCAAGL3ZCi/SAkAECgYEA+TmdebEWjL2Q2WtJPAujU             jCVlvlz0UP9DXyKa636O8MJDjXMjaHHH5cC55H7IO7y14ZihH/4o0RlqE             wPZe3dk/GQG8p/azAI30kga9hsQu4f3QHGBERbQBlxZiDvKknYVBnUG8d             oFwV+Z0FQud7IisedWmkyQz7gmwsgEOLgxlcCgYEAvTcgJT4gqATLFrSs             Y2gXj9CT0lI+gHofiazvhEjckmw6d8EO6hYxJARy6hE/7vP+G/EYZaptt             NcjWlE+nqe9TgA7LeaOVSSQ6NeQHzFDnDkGYZDKVIsez8/SfCv3EDrSPL             FdyHGIpAtvhSfjGJzjHpBuiQbnenfR30+A3G4kYYECgYBq1COIUjxUP72             jNLXDo0lypZi5ilv2y6ng6g17cqvcihGLocv4uevcwqJgGNcImuRFNjls             il5NvbfFmDTRgFCGZflbsEVF8OUcsP/QuohNeDz4QxZaJeLnawCMwnlCK             z0rb5bYAXXAyH4STJEJ21EjC8WLR6Rf5sfoLbClDFtFKQKBgHBe8adMi0             ZdemMkr5BlvEB7pZ5tm5LfdCVmX+SXBO+seNiv/fSFc2+peLmLvwVhQBN             GDrAqE/cnIWa9A0xj3+gX+Q1cdEEaczjk9EGiFz4LG8ALpi2pZYYTLTTzQ             0oPNNY4m7KzwmtyIyvYMWVnnvaC3jJguE4iJLDTXXsLqm2BAoGASPZpC2n             gqIOJ3Jpv6fBPdl7g0j8XMOJ7UK3tM6vni7Z2KjpUHmwYXkewZuuJdZxs6             RL51TJpTF8hPvPR9DGZCjWpt6IPfJhR5BAvIv5WdDOnTLUSUtk9/WC/yIq             TX311o9rYJYNURs9jyTsaRLb20AnsV+yVZ1jJyvwvz4RuxIE="/>
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4NTPvImFpYzyTYiiqe5podrHNV8PtBCcPBeoX1U0gHnEEAn+465LGl5PjsdheRH0Yx3CPHo7Lm7X6+Q/FJSqGsbRAmHlJ1LIt1dqQ             s3ourJ2a+Xx6wgTIRuObwUZyPP7/5NZ2nD6M+/aEqjF8qeehM80qWTzd             I7dYNeK5TzIWhIHIsePd6HW7oEAq8rTu73aefXddo9qH5MBYUHEt6DsV             S+GNApzgB2EuhI+II/jET83qszkIE8uWaLhEomfh+hPFQ0Kvw1UnyS2g             5Dq40NFlZKne3FUIrrbvSNb2FS+VXKiLBPrTQZPslGHX8WDOeG8JFm/Q             TYSNYnXM/hLEpujXAgMBAAECggEBAI4oALw7PBGok8bpqZhnavHTJ8Pg             R0NSQRJG7jEWWz6+P1lo1EhRBCReNbMyPFgDYscMosDQREK9F+Nm8dSi             qf7ohMKU6IUhr5/PuayR1WjPrZE7l+TkdexZSK2aqlLe36t7XkaKrXr/t             28KKMacGDU/VMWpuF6wgX2BmEaJ542XwnVN/SR3hjzXiy3vwfQiz83aYE             FYtMeDwMR0paNpvzCGoqdt7i7L+3bRmZpeY9oI6Wyht7s7cDMTEYzggwE             dNcaMf4uRdhjEKwCU4q+0LT37zbJDsZI0H/F1QZqOsnD//3P54yeT3Mcl             3tpnTr53aNkH2u0jCAAGL3ZCi/SAkAECgYEA+TmdebEWjL2Q2WtJPAujU             jCVlvlz0UP9DXyKa636O8MJDjXMjaHHH5cC55H7IO7y14ZihH/4o0RlqE             wPZe3dk/GQG8p/azAI30kga9hsQu4f3QHGBERbQBlxZiDvKknYVBnUG8d             oFwV+Z0FQud7IisedWmkyQz7gmwsgEOLgxlcCgYEAvTcgJT4gqATLFrSs             Y2gXj9CT0lI+gHofiazvhEjckmw6d8EO6hYxJARy6hE/7vP+G/EYZaptt             NcjWlE+nqe9TgA7LeaOVSSQ6NeQHzFDnDkGYZDKVIsez8/SfCv3EDrSPL             FdyHGIpAtvhSfjGJzjHpBuiQbnenfR30+A3G4kYYECgYBq1COIUjxUP72             jNLXDo0lypZi5ilv2y6ng6g17cqvcihGLocv4uevcwqJgGNcImuRFNjls             il5NvbfFmDTRgFCGZflbsEVF8OUcsP/QuohNeDz4QxZaJeLnawCMwnlCK             z0rb5bYAXXAyH4STJEJ21EjC8WLR6Rf5sfoLbClDFtFKQKBgHBe8adMi0             ZdemMkr5BlvEB7pZ5tm5LfdCVmX+SXBO+seNiv/fSFc2+peLmLvwVhQBN             GDrAqE/cnIWa9A0xj3+gX+Q1cdEEaczjk9EGiFz4LG8ALpi2pZYYTLTTzQ             0oPNNY4m7KzwmtyIyvYMWVnnvaC3jJguE4iJLDTXXsLqm2BAoGASPZpC2n             gqIOJ3Jpv6fBPdl7g0j8XMOJ7UK3tM6vni7Z2KjpUHmwYXkewZuuJdZxs6             RL51TJpTF8hPvPR9DGZCjWpt6IPfJhR5BAvIv5WdDOnTLUSUtk9/WC/yIq             TX311o9rYJYNURs9jyTsaRLb20AnsV+yVZ1jJyvwvz4RuxIE=" />
 
-        <activity android:name=".loginEffect.LoginEffectActivity">
-        </activity>
-        <activity android:name=".coustomview.CustomViewActivity">
-        </activity>
-        <activity android:name=".reuseview.activity.ReuseViewActivity">
-        </activity>
-        <activity android:name=".generateimages.GenerateImagesActivity">
-        </activity>
-        <activity android:name=".popwindow.PopupWindowActivity">
-        </activity>
-        <activity android:name=".rxjava.RxJavaActivity">
-        </activity>
+        <activity android:name=".loginEffect.LoginEffectActivity"></activity>
+        <activity android:name=".coustomview.CustomViewActivity"></activity>
+        <activity android:name=".reuseview.activity.ReuseViewActivity"></activity>
+        <activity android:name=".generateimages.GenerateImagesActivity"></activity>
+        <activity android:name=".popwindow.PopupWindowActivity"></activity>
+        <activity android:name=".rxjava.RxJavaActivity"></activity>
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/CustomNoTitle.NoActionBar">
-        </activity>
-        <activity android:name=".linkman.LinkManActivity">
-        </activity>
-        <activity android:name=".broadcast.BroadCastActivity">
-        </activity>
-        <activity android:name=".tablayout.TabLayoutActivity">
-        </activity>
-        <activity android:name=".searchview.SearchViewActivity">
-        </activity>
+            android:theme="@style/CustomNoTitle.NoActionBar"></activity>
+        <activity android:name=".linkman.LinkManActivity"></activity>
+        <activity android:name=".broadcast.BroadCastActivity"></activity>
+        <activity android:name=".tablayout.TabLayoutActivity"></activity>
+        <activity android:name=".searchview.SearchViewActivity"></activity>
+        <activity android:name=".easypermissions.EasyPermissionsActivity"></activity>
     </application>
 
 </manifest>

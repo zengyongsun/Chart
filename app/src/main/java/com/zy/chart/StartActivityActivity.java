@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.zy.chart.broadcast.BroadCastActivity;
 import com.zy.chart.chart.MainChartActivity;
 import com.zy.chart.coustomview.CustomViewActivity;
+import com.zy.chart.easypermissions.EasyPermissionsActivity;
 import com.zy.chart.linkman.LinkManActivity;
 import com.zy.chart.loginEffect.LoginEffectActivity;
 import com.zy.chart.popwindow.PopupWindowActivity;
@@ -66,6 +67,7 @@ public class StartActivityActivity extends AppCompatActivity {
 
     private void initData() {
         List<StartBean> data = new ArrayList<>();
+        data.add(new StartBean("权限管理框架 Easypermissions", EasyPermissionsActivity.class));
         data.add(new StartBean("图标的展示，以及设置方式", MainChartActivity.class));
         data.add(new StartBean("文本打开方式尝试", SelectFileActivity.class));
         data.add(new StartBean("一种奇葩的登录方式", LoginEffectActivity.class));
@@ -79,6 +81,7 @@ public class StartActivityActivity extends AppCompatActivity {
         data.add(new StartBean("广播发送", BroadCastActivity.class));
         data.add(new StartBean("tabLayout +　ViewPager", TabLayoutActivity.class));
         data.add(new StartBean("搜索效果", SearchViewActivity.class));
+
 
         mStartAdapter.setNewData(data);
     }
