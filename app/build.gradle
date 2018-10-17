@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
         applicationId rootProject.ext.android.applicationId
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -10,6 +9,11 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
     }
     buildTypes {
         release {
@@ -17,41 +21,47 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     // if you use the support libraries
     //测试用的
-    compile files('libs/Msc.jar')
-    compile files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
-    compile rootProject.ext.dependencies["appcompat-v7"]
-    compile files('libs/alicloud-android-utils-1.0.3.jar')
-    compile 'com.android.support.constraint:constraint-layout:1.1.3'
-    compile 'com.linheimx.library:lchart:1.1.4'
-    compile 'com.orhanobut:logger:1.15'
-    compile 'com.yalantis:ucrop:2.2.0'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile 'com.android.support:support-v13:28.0.0'
-    compile 'com.android.support:recyclerview-v7:28.0.0'
-    compile 'com.github.hotchemi:permissionsdispatcher:2.4.0'
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation files('libs/Msc.jar')
+    implementation files('libs/tbs_sdk_thirdapp_v3.2.0.1104_43200_sharewithdownload_withfilereader_withoutGame_obfs_20170609_115346.jar')
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation files('libs/alicloud-android-utils-1.0.3.jar')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.linheimx.library:lchart:1.1.4'
+    implementation 'com.orhanobut:logger:1.15'
+    implementation 'com.yalantis:ucrop:2.2.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
 
-    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.android.support:design:28.0.0'
-    compile 'com.android.support:support-v4:28.0.0'
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-    compile 'com.google.android.gms:play-services-plus:10.2.6'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.google.android.gms:play-services-plus:10.2.6'
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
-    compile 'pub.devrel:easypermissions:2.0.0'
+    implementation 'pub.devrel:easypermissions:2.0.0'
 }

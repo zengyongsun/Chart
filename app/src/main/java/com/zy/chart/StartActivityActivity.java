@@ -15,6 +15,7 @@ import com.zy.chart.broadcast.BroadCastActivity;
 import com.zy.chart.chart.MainChartActivity;
 import com.zy.chart.coustomview.CustomViewActivity;
 import com.zy.chart.easypermissions.EasyPermissionsActivity;
+import com.zy.chart.jni.NDKTestActivity;
 import com.zy.chart.linkman.LinkManActivity;
 import com.zy.chart.loginEffect.LoginEffectActivity;
 import com.zy.chart.popwindow.PopupWindowActivity;
@@ -33,9 +34,9 @@ import butterknife.ButterKnife;
 
 public class StartActivityActivity extends AppCompatActivity {
 
-    @BindView(R.id.top_imageView) ImageView topImageView;
-    @BindView(R.id.top_textView) TextView topTextView;
-    @BindView(R.id.start_recycler) RecyclerView startRecycler;
+
+    @BindView(R.id.start_recycler)
+    RecyclerView startRecycler;
     private StartAdapter mStartAdapter;
     private Context mContext;
 
@@ -50,8 +51,6 @@ public class StartActivityActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        topImageView.setVisibility(View.GONE);
-        topTextView.setText("主列表");
         startRecycler.setLayoutManager(new LinearLayoutManager(mContext));
         mStartAdapter = new StartAdapter(R.layout.adapter_start_item);
         startRecycler.setAdapter(mStartAdapter);
@@ -67,7 +66,10 @@ public class StartActivityActivity extends AppCompatActivity {
 
     private void initData() {
         List<StartBean> data = new ArrayList<>();
+
+        data.add(new StartBean("NDK的尝试", NDKTestActivity.class));
         data.add(new StartBean("权限管理框架 Easypermissions", EasyPermissionsActivity.class));
+
         data.add(new StartBean("图标的展示，以及设置方式", MainChartActivity.class));
         data.add(new StartBean("文本打开方式尝试", SelectFileActivity.class));
         data.add(new StartBean("一种奇葩的登录方式", LoginEffectActivity.class));
