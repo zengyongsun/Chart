@@ -76,7 +76,11 @@
         <activity android:name=".tablayout.TabLayoutActivity" />
         <activity android:name=".searchview.SearchViewActivity" />
         <activity android:name=".easypermissions.EasyPermissionsActivity" />
-        <activity android:name=".jni.NDKTestActivity"></activity>
+        <activity android:name=".jni.NDKTestActivity" />
+
+        <service android:name=".service.MyService" />
+
+        <activity android:name=".service.ServiceTestActivity"></activity>
     </application>
 
 </manifest>

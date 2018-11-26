@@ -24,6 +24,7 @@ import com.zy.chart.rxjava.RxJavaActivity;
 import com.zy.chart.searchview.SearchViewActivity;
 import com.zy.chart.selectHead.SelectHeadActivity;
 import com.zy.chart.selectfile.SelectFileActivity;
+import com.zy.chart.service.ServiceTestActivity;
 import com.zy.chart.tablayout.TabLayoutActivity;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class StartActivityActivity extends AppCompatActivity {
 
     private void initData() {
         List<StartBean> data = new ArrayList<>();
-
+        data.add(new StartBean("Service的生命周期与启动方式", ServiceTestActivity.class));
         data.add(new StartBean("NDK的尝试", NDKTestActivity.class));
         data.add(new StartBean("权限管理框架 Easypermissions", EasyPermissionsActivity.class));
 

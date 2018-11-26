@@ -1,25 +1,21 @@
 #include <jni.h>
 #include <string>
 
-extern "C" JNIEXPORT jstring
 
-JNICALL
-Java_com_zy_chart_jni_NDKTestActivity_stringFromJNI(
-        JNIEnv *env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
-}
+
 
 
 extern "C"
-JNIEXPORT void JNICALL
-Java_com_zy_chart_jni_NDKTestActivity_swap(JNIEnv *env, jobject instance, jstring a_, jstring b_) {
-    const char *a = env->GetStringUTFChars(a_, 0);
-    const char *b = env->GetStringUTFChars(b_, 0);
+JNIEXPORT jint JNICALL
+Java_com_zy_chart_jni_NDKTestActivity_addNum(JNIEnv *env, jobject instance) {
 
-    // TODO
+    //获取实例对应的 class
+    jclass jclazz = env->GetObjectClass(instance);
+    //通过class获取相应的变量的 field id
+    jfieldID fid = env->GetFieldID(jclazz, "num", "I");
+    //通过 field id 获取对应的值
+    jint num = env->GetIntField(instance, fid);  //注意，不是用 jclazz, 使用 jobj
+    num++;
+    return num;
 
-    env->ReleaseStringUTFChars(a_, a);
-    env->ReleaseStringUTFChars(b_, b);
 }
